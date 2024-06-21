@@ -8,7 +8,7 @@ function pageView(){
         async function renderWatchlist() {
             let html = ''
             for(let movie of watchlistArray){
-                const response = await fetch(`http://www.omdbapi.com/?apikey=57fec25c&i=${movie}`)
+                const response = await fetch(`https://www.omdbapi.com/?apikey=57fec25c&i=${movie}`)
                 const data = await response.json()
                     html += `
                     <div class='movie-item' id='${data.imdbID}'>

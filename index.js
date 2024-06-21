@@ -12,14 +12,14 @@ const resultGrid = document.getElementById("result-grid")
 
 searchBtn.addEventListener("click", async () => {
     if (searchField.value) {
-        const response = await fetch(`http://www.omdbapi.com/?apikey=57fec25c&s=${searchField.value}`)
+        const response = await fetch(`https://www.omdbapi.com/?apikey=57fec25c&s=${searchField.value}`)
         const data = await response.json()
         // console.log(data)
         const moviesList = data.Search
         console.log(moviesList)
         let resultGridHtml = ''
         for (const movie of moviesList) {
-            const response = await fetch(`http://www.omdbapi.com/?apikey=57fec25c&i=${movie.imdbID}`)
+            const response = await fetch(`https://www.omdbapi.com/?apikey=57fec25c&i=${movie.imdbID}`)
             const data = await response.json()
             console.log(data)
             resultGridHtml += `
